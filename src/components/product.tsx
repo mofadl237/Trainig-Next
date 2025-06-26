@@ -1,13 +1,20 @@
+import {  IProduct } from "@/interface"
 
-const product = () => {
+
+interface IProps{
+    // farm:IFarm
+    product:IProduct
+}
+const Product = ({product}:IProps) => {
+    
   return (
-    <div>
-        <h3>Title</h3>
-        <p>Description</p>
-        <h5>Price</h5>
-        <h5>Stock</h5>
+    <div className="border-1 shadow p-5 bg-amber-300 cursor-pointer text-white  rounded-md">
+        <h3> productID - {product.id}</h3>
+        <h5>product Title - {product.title}</h5>
+        <h5>product Price - {product.price}</h5>
+        {/* <Image src={product.thumbnail}  alt={product.title}  /> */}
     </div>
   )
 }
 
-export default product
+export default Product
