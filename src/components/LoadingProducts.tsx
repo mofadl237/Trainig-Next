@@ -2,7 +2,7 @@
 
 const LoadingProducts = () => {
   return (
-    <div>LoadingProducts Suspense</div>
+    <div className=" bg-red-600">Loading Products Suspense</div>
   )
 }
 

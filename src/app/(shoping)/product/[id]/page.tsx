@@ -3,6 +3,28 @@ import {  IProduct } from "@/interface";
 import Image from "next/image";
 import Link from "next/link";
 
+//Meta data
+import type { Metadata } from 'next'
+ 
+type Props = {
+  params: Promise<{ id: string }>
+}
+ 
+export async function generateMetadata(
+  { params }: Props,
+): Promise<Metadata> {
+  const id = (await params).id
+ 
+  // fetch post information
+  const {title ,description} = await fetch(`https://dummyjson.com/products/${id}`).then((res) =>
+    res.json()
+  )
+ 
+  return {
+    title,
+    description,
+  }
+}
 
 interface IProps{
     params:{
